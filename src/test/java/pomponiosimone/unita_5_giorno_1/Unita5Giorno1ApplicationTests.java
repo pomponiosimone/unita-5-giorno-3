@@ -16,12 +16,13 @@ class Unita5Giorno1ApplicationTests {
 
 	@Autowired
 	private MenuConfig menuConfig;
-
 	@Test
 	public void testCostoDelCoperto() {
 		double expectedCostoDelCoperto = 2.50;
 
-		assertEquals(expectedCostoDelCoperto, menuConfig.getClass().getDeclaredField("costoDelCoperto").getDouble(menuConfig));
+		double actualCostoDelCoperto = menuConfig.getCostoDelCoperto();
+		System.out.println("Costo del coperto: " + actualCostoDelCoperto);
+		assertEquals(expectedCostoDelCoperto, actualCostoDelCoperto, "Il costo del coperto dovrebbe essere 2.50");
 	}
 
 }

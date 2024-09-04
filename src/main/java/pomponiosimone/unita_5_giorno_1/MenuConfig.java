@@ -1,5 +1,6 @@
 package pomponiosimone.unita_5_giorno_1;
 
+import lombok.Getter;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -13,19 +14,21 @@ import java.util.List;
 public class MenuConfig {
 
     //Beans
+    @Getter
     @Value("${costo.del.coperto:2.50}")
     private double costoDelCoperto;
 
     @Bean
     public List<Pizza> Menupizza() {
-       return List.of(
-               new Pizza("Margherita", 60, 6.5),
-        new Pizza("Diavola", 90, 10),
-        new Pizza("Napoli", 70, 9),
-        new Pizza("Capricciosa", 100, 9)
-       );
+        return List.of(
+                new Pizza("Margherita", 60, 6.5),
+                new Pizza("Diavola", 90, 10),
+                new Pizza("Napoli", 70, 9),
+                new Pizza("Capricciosa", 100, 9)
+        );
     }
-   @Bean
+
+    @Bean
     public List<Drink> Menudrink() {
         return List.of(
                 new Drink("Spritz", 100, 8.5),
@@ -34,6 +37,7 @@ public class MenuConfig {
                 new Drink("Acqua", 0, 1.5)
         );
     }
+
     @Bean
     public List<Topping> Menutopping() {
         return List.of(
@@ -43,6 +47,4 @@ public class MenuConfig {
                 new Topping("patatine fritte", 10, 2.5)
         );
     }
-
-
 }
