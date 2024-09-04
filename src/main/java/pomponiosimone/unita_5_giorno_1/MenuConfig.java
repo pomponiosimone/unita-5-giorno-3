@@ -55,6 +55,6 @@ public class MenuConfig {
                 return pizza.getPrice();
 
         }
-        return 0.0; // Valore di fallback se non trovata
+        return 0.0;
     }
 }
