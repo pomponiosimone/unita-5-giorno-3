@@ -13,15 +13,15 @@ import java.util.List;
 @Configuration
 public class MenuConfig {
 
-    //Beans
     @Getter
     @Value("${costo.del.coperto:2.50}")
     private double costoDelCoperto;
 
+    // BEANS
     @Bean
     public List<Pizza> Menupizza() {
         return List.of(
-                new Pizza("Margherita", 60, 6.5),
+                new Pizza("Margherita", 60, 6.50),
                 new Pizza("Diavola", 90, 10),
                 new Pizza("Napoli", 70, 9),
                 new Pizza("Capricciosa", 100, 9)
@@ -46,5 +46,15 @@ public class MenuConfig {
                 new Topping("Salame", 10, 1.2),
                 new Topping("patatine fritte", 10, 2.5)
         );
+    }
+
+    public double getCostoMargherita() {
+        List<Pizza> pizzas = Menupizza();
+        for (Pizza pizza : pizzas) {
+            if ("Margherita".equals(pizza.getName()))
+                return pizza.getPrice();
+
+        }
+        return 0.0; // Valore di fallback se non trovata
     }
 }

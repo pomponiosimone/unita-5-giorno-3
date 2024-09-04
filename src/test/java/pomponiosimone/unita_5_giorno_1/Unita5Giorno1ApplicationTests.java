@@ -18,6 +18,7 @@ class Unita5Giorno1ApplicationTests {
 	private MenuConfig menuConfig;
 	@Test
 	public void testCostoDelCoperto() {
+
 		double expectedCostoDelCoperto = 2.50;
 
 		double actualCostoDelCoperto = menuConfig.getCostoDelCoperto();
@@ -25,4 +26,11 @@ class Unita5Giorno1ApplicationTests {
 		assertEquals(expectedCostoDelCoperto, actualCostoDelCoperto, "Il costo del coperto dovrebbe essere 2.50");
 	}
 
+@Test
+	public void costoMargherita() {
+		double expectedCostoMargherita = 6.50;
+		double actualCostoMargherita = menuConfig.getCostoMargherita();
+		System.out.println("Costo della margherità è giusto: " + actualCostoMargherita );
+		assertEquals(expectedCostoMargherita,actualCostoMargherita,"il costo della margherità dovrebbe essere 6.50");
+}
 }
